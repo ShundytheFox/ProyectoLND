@@ -1,0 +1,17 @@
+<!ELEMENT VrHeadsets (VrHeadset+)>
+<!ELEMENT VrHeadset (VrName,Date,Tracking,CreatorName,Purpose,Description,Price,TechnicalAspects)>
+<!ELEMENT VrName (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Tracking (HeadTracking,HandTracking,FullbodyTracking)>
+<!ELEMENT HeadTracking (#PCDATA)>
+<!ELEMENT HandTracking (#PCDATA)>
+<!ELEMENT FullbodyTracking (#PCDATA)>
+<!ELEMENT CreatorName (#PCDATA)>
+<!ELEMENT Purpose (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT TechnicalAspects (Resolution,FieldOfView,IntegratedSpeakers)>
+<!ELEMENT Resolution (#PCDATA)>
+<!ELEMENT FieldOfView (#PCDATA)>
+<!ELEMENT IntegratedSpeakers (#PCDATA)>
+<!ATTLIST VrHeadset ID CDATA #REQUIRED>
