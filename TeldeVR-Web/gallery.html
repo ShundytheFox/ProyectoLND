@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+    <script>var firebaseConfig = {
+            apiKey: "AIzaSyDgsvCJDdLARUri45pNCW_xHjQY7IrIuGU",
+            authDomain: "visitas-vr.firebaseapp.com",
+            databaseURL: "https://visitas-vr-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "visitas-vr",
+            storageBucket: "visitas-vr.appspot.com",
+            messagingSenderId: "101580046169",
+            appId: "1:101580046169:web:4926fead5ef8c7498bd648",
+            measurementId: "G-K7P2V5HJS5"
+        };
+
+        firebase.initializeApp(firebaseConfig);</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Galería de TeldeVR</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script src="js/auth.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TeldeVR</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="visits.html">Visitas</a></li>
+                    <li><a href="gallery.html">Galería</a></li>
+                    <li><a href="about_us.html">Info</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Turismo
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item letter" href="loged.html">Visitas activas</a>
+                            <a class="dropdown-item letter" href="total_visits.html">Lugares</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="sign-in" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" href="">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+    
+
+    <div class="gallery">
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/melenara.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Playa de Melenara
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG1" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/Melenaravieja.png">
+                <div class="card-body">
+                    <h4 class="card-title titles">Melenara - Antiguo
+                    </h4><a class="size btn btn-primary" data-target="#modalIMG2" data-toggle="modal" href="#">Ver
+                        imagen</a>
+                </div>
+            </div>
+
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/SieteOjos.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Puente Siete Ojos
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG3" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/PuenteSieteOjosAntiguo.png">
+                <div class="card-body">
+                    <h4 class="card-title titles">Puente Siete Ojos - Antiguo
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG4" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/telde.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Iglesia de San Juan - 1
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG5" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/Zona-fundacional-de-San-Juan-de-Telde.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Iglesia de San Juan - 2
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG6" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/sanjuan-antiguo.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Iglesia de San Juan - Antiguo
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG7" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/telde-letrero.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Letrero de Telde
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG8" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/telde-logo.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Rotonda Daora
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG9" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+            <div class="ba-0">
+                <img alt="Card image cap" class="card-img-top" src="img/Tufia.jpg">
+                <div class="card-body">
+                    <h4 class="card-title titles">Playa de Tufia
+                    </h4>
+                    <a class="size btn btn-primary" data-target="#modalIMG10" data-toggle="modal" href="#">Ver imagen</a>
+                </div>
+            </div>
+
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG1" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/melenara.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/melenara.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class=" buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG2" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/Melenaravieja.png" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/Melenaravieja.png" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG3" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/SieteOjos.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/SieteOjos.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG4" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/PuenteSieteOjosAntiguo.png" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/PuenteSieteOjosAntiguo.png" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG5" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/telde.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/telde.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG6" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/Zona-fundacional-de-San-Juan-de-Telde.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/Zona-fundacional-de-San-Juan-de-Telde.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG7" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/SanJuanAntiguo.png" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/SanJuanAntiguo.png" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG8" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/telde-letrero.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/telde-letrero.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG9" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/telde-logo.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/telde-logo.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="true" class="modal fade buttons" id="modalIMG10" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body center mb-0 p-0">
+                        <img src="img/Tufia.jpg" alt="" style="width:90%">
+                    </div>
+                    <div class="modal-footer">
+                        <div><a class="buttons" href="img/Tufia.jpg" target="_blank">Descargar</a>
+                        </div>
+                        <button class="buttons btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal"
+                            type="button">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="col-sm-4">
+                <a type="application/rss+xml" href="rss.xml">
+                    <img width="30" src="img/rss.png" alt="rss-logo" class="img-thumbnail">
+                </a>
+                <a href="rss.xml">Enlace a nuestro RSS</a>
+            </div>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Blog</a>
+                |
+                <a href="about_us.html">Sobre nosotros</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 IES El Rincón</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <p><span>Industrial José Sánchez Peñate, s/n, 35001</span>
+                    Las Palmas de Gran Canaria, Las Palmas</p>
+            </div>
+
+            <div>
+                <p>928 22 72 83</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>VRTelde</span>
+                VRTelde se reserva el derecho a modificaciones.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.navbar').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.navbar').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+    <script>var firebaseConfig = {
+            apiKey: "AIzaSyDgsvCJDdLARUri45pNCW_xHjQY7IrIuGU",
+            authDomain: "visitas-vr.firebaseapp.com",
+            databaseURL: "https://visitas-vr-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "visitas-vr",
+            storageBucket: "visitas-vr.appspot.com",
+            messagingSenderId: "101580046169",
+            appId: "1:101580046169:web:4926fead5ef8c7498bd648",
+            measurementId: "G-K7P2V5HJS5"
+        };
+
+        firebase.initializeApp(firebaseConfig);</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Sobre Nosotros</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/scrollspy.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TeldeVR</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="visits.html">Visitas</a></li>
+                    <li><a href="gallery.html">Galería</a></li>
+                    <li><a href="about_us.html">Info</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Turismo
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item letter" href="loged.html">Visitas activas</a>
+                            <a class="dropdown-item letter" href="total_visits.html">Lugares</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="sign-in" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" href="">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row ">
+            <nav class="col-sm-2 " id="myScrollspy">
+                <ul class="scrollspy nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#aboutUs">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#elRincon">El Rincon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sanCristobal">San Cristóbal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#members">Miembros</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-sm-10">
+                <div id="aboutUs">
+
+                    <div class=row>
+                        <div class="col-sm-8">
+                            <h1 class="titles">Sobre nosotros</h1>
+                            <p class="paragraphs">Somos un grupo de alumnos de diferentes institutos coordinados para hacer de la experiencia
+                                en Realidad Virtual
+                                algo mucho más cercano a viajar de verdad.
+                            </p>
+                            <p class="paragraphs">Nuestro foco pasa por la maravillosa ciudad de Telde, una ciudad llena de historia y
+                                colores que merece toda nuestra
+                                atención y que por primera vez se va a poder disfrutar en Realidad Virtual desde el
+                                salón de tu casa.
+                            </p>
+                            <p class="paragraphs">Desde el IES El Rincón estamos colaborando con el CIFP San Cristóbal para que toda esta
+                                experiencia
+                                sea una aventura con la que querrás repetir.
+                            </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img class="img-fluid" src="img/450_1000.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="elRincon">
+
+                    <div class=row>
+                        <div class="col-sm-4">
+                            <h1 class="titles">IES El Rincón</h1>
+                            <br>
+                            <img class="img-fluid" width="400" src="img/elrincon.jpg" alt="">
+
+                        </div>
+                        <div class="col-sm-8">
+                            <br>
+                            <br>
+                            <br>
+                            <p class="paragraphs">El IES El Rincon es un Instituto de Educación Secundaria donde además se imparte
+                                bachiller y ciclos formativos tanto
+                                básico, como medio y superior. </p>
+                            <p class="paragraphs">En este caso, los alumnos del primer año del Ciclo Superior de Desarrollo de Aplicaciones
+                                Multiplataforma nos hemos juntado
+                                para programar y hacer toda la parte técnica de este proyecto.
+                            </p>
+                            <p class="paragraphs">El instituto lleva ya 25 años en activo y tiene una amplia oferta educativa de ciclos
+                                formativos,
+                                tales como Sistemas Microinformáticos y Redes (SMR), Administración de Sistemas
+                                Informáticos y Redes (ASIR),
+                                Desarrollo de Aplicaciones Multiplataforma (DAM) y Desarrollo de Aplicaciones Web (DAW)
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="sanCristobal">
+
+                    <div class=row>
+                        <div class="col-sm-8">
+                            <br>
+                            <h1 class="titles">CIFP San Cristóbal</h1>
+                            <br>
+                            <p class="paragraphs">El CIFP San Cristóbal es un Centro Integrado de Formación Profesional donde se imparten
+                                muchísimos
+                                ciclos formativos distintos de una amplia variedad.</p>
+                            <p class="paragraphs">En cuanto a TeldeVR, los alumnos del San Cristobal brindan toda la información necesaria
+                                junto con todas las
+                                herramientas didácticas tales como las imágenes, audios, textos, y todo aquello que
+                                sirve para completar esta increíble
+                                experiencia de forma que sea lo más certera posible.
+                            </p>
+                            <p class="paragraphs">Nacido en 2013 tras la aprobación y creación de los CIFP, El CIFP San Cristóbal lleva
+                                desde entonces ofertando una amplia gama
+                                de cursos de Formación Profesional relacionados con la rama de la electricidad, turismo,
+                                hostelería, alimentación y muchos otros.
+                            </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <br>
+                            <img class="img-fluid" width="400" src="img/sancristobal.jpg" alt="">
+                            <br>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="members">
+                    <h1 class="titles">Miembros</h1>
+
+                    <div class="paragraphs table-responsive">
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Email</th>
+                                    <th>Instituto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Adrián</td>
+                                    <td>Lorenzo Barrios</td>
+                                    <td>adrianlorenzobarrios@alumno.ieselrincon.es</td>
+                                    <td>IES El Rincón</td>
+                                </tr>
+                                <tr>
+                                    <td>Cristina</td>
+                                    <td>Santana Martin</td>
+                                    <td>cristinasantanamartin@alumno.ieselrincon.es</td>
+                                    <td>IES El Rincón</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Daniel</td>
+                                    <td>Bordera García</td>
+                                    <td>danielborderagarcia@alumno.cifpsancristobal.es</td>
+                                    <td>CIFP San Cristóbal</td>
+                                </tr>
+                                <tr>
+                                    <td>Pedro</td>
+                                    <td>Morera Peña</td>
+                                    <td>pedromorerapeña@alumno.cifpsancristobal.es</td>
+                                    <td>CIFP San Cristóbal</td>
+                                </tr>
+                                <tr>
+                                    <td>María</td>
+                                    <td>de la Mata Municio</td>
+                                    <td>mariadelamata@alumno.cifpsancristobal.es</td>
+                                    <td>CIFP San Cristóbal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="col-sm-4">
+                <a type="application/rss+xml" href="rss.xml">
+                    <img width="30" src="img/rss.png" alt="rss-logo" class="img-thumbnail">
+                </a>
+                <a href="rss.xml">Enlace a nuestro RSS</a>
+            </div>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Blog</a>
+                |
+                <a href="about_us.html">Sobre nosotros</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 IES El Rincón</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <p><span>Industrial José Sánchez Peñate, s/n, 35001</span>
+                    Las Palmas de Gran Canaria, Las Palmas</p>
+            </div>
+
+            <div>
+                <p>928 22 72 83</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>VRTelde</span>
+                VRTelde se reserva el derecho a modificaciones.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.navbar').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.navbar').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+
+</html>

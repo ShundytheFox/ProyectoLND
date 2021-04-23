@@ -1,0 +1,118 @@
+body {
+    background-color: rgb(219, 219, 219);
+}
+
+.loged {
+    margin-top: 5%;
+}
+
+.progress-bar {
+  width: 0%;
+}
+
+.size {
+  font-size: 100%;
+}
+
+.centered {
+  text-align: center;
+}
+
+.bold {
+  font-size: 250%;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+.titles {
+  font-size: 300%;
+  padding: 30px;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
+#selector{
+  font-size: 100%;
+}
+
+#price {
+  font-size: 100%;
+}
+
+#error {
+  margin:auto;
+  height: 1000px;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+  background-color: rgba(189, 48, 48, 0.753);
+  font-size: 200%;
+}
+
+#error-letter {
+  margin: 100px;
+}
+
+.paragraphs {
+  font-size: 200%;
+  padding: 15px;
+}
+
+#send-data1 {
+  font-size: 250%;
+  margin-top: 3%;
+}
+
+#send-data3 {
+  margin-top: 10%;
+  font-size: 250%;
+}
+
+#alert {
+  font-size: 300%;
+  border-radius: 20px;
+  margin: 1%;
+  padding: 1%;
+  text-align: center;
+  background-color: rgba(189, 78, 78, 0.753);
+}
+
+#error-price {
+    display: none;
+    color: red;
+  }
+  
+#error-vr {
+    display: none;
+    color: red;
+  }
+  
+#error-email {
+    display: none;
+    color: red;
+  }
+
+#error-selector {
+    display: none;
+    color: red;
+  }
+
+#error-user {
+    display: none;
+    color: red;
+  }
+  
+#error-radio {
+    display: none;
+    color: red;
+  }
+  
+#error-comment {
+    display: none;
+    color: red;
+  }
+
+#error-image {
+    display: none;
+    color: red;
+  }

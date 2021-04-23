@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Notificaciones de TeldeVR</title>
+        <link>https://www.teldeVR.com</link>
+        <description>Aquí encontrarás las últimas novedades sobre TurismoVR
+            para mantenerte informado sobre todo lo que necesitas.
+        </description>
+        <item>
+            <title>Información sobre TeldeVR</title>
+            <link>https://www.teldeVR.com/aboutUs</link>
+            <description>¿Listo para descubrirnos? todo lo que necesitas saber
+                sobre nosotros está aquí.
+            </description>
+        </item>
+        <item>
+            <title>Visitas</title>
+            <link>https://www.teldeVR.com/visitas</link>
+            <description>Infórmate sobre las visitas activas en este momento.
+            </description>
+        </item>
+        <item>
+            <title>Galería</title>
+            <link>https://www.teldeVR.com/gallery</link>
+            <description>Una galería de imágenes de todo Telde.
+            </description>
+        </item>
+
+    </channel>
+</rss>

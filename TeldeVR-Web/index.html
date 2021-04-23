@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+    <script>var firebaseConfig = {
+            apiKey: "AIzaSyDgsvCJDdLARUri45pNCW_xHjQY7IrIuGU",
+            authDomain: "visitas-vr.firebaseapp.com",
+            databaseURL: "https://visitas-vr-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "visitas-vr",
+            storageBucket: "visitas-vr.appspot.com",
+            messagingSenderId: "101580046169",
+            appId: "1:101580046169:web:4926fead5ef8c7498bd648",
+            measurementId: "G-K7P2V5HJS5"
+        };
+
+        firebase.initializeApp(firebaseConfig);</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Página principal TeldeVR</title>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TeldeVR</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="visits.html">Visitas</a></li>
+                    <li><a href="gallery.html">Galería</a></li>
+                    <li><a href="about_us.html">Info</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Turismo
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item letter" href="loged.html">Visitas activas</a>
+                            <a class="dropdown-item letter" href="total_visits.html">Lugares</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="sign-in" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" href="">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <div class="home">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div id="alert" class="col-sm-4">
+            <h1>¡Aviso Importante!</h1>
+            <p>Prueba una pequeña demo sobre las visitas de TeldeVR haciendo clic en el botón inferior.</p>
+            <a href="https://vr-telde.firebaseapp.com/" class="btn btn-dark size" role="button">Click aquí</a>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+
+
+    <div class="row img-portada">
+        <div class="col-sm-3">
+            <a href="https://es.wikipedia.org/wiki/Bas%C3%ADlica_de_San_Juan_Bautista_(Telde)">
+                <img alt="" src="img/basilica-of-san-juan.jpg" class="img-fluid header-img zoom">
+            </a>
+        </div>
+        <div class="col-sm-3 ">
+            <a href="https://www.grancanaria.com/blog/es/article/playa-de-melenara-el-reino-azul/">
+                <img alt="" src="img/Panoramica-de-Melenara-scaled.jpg" class="img-fluid header-img zoom ">
+            </a>
+        </div>
+    </div>
+    <div class="row img-portada">
+        <div class="col-sm-3">
+            <a href="https://www.teldeactualidad.com/hemeroteca/noticia/grancanaria/2017/12/09/1541.html">
+                <img alt="" src="img/puente.jpg" class="img-fluid header-img zoom">
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="https://www.teldeactualidad.com/hemeroteca/articulo/geografia/2020/08/05/315.html">
+                <img alt="" src="img/franchy.jpg" class="img-fluid header-img zoom">
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row img-portada">
+        <div class="sm-1">
+            <img src="img/soloLogo.PNG" height="80" width="80" class="img-fluid" alt="">
+        </div>
+        <div class="sm-1">
+            <h1>TeldeVR</h1>
+        </div>
+        <div class="sm-1">
+            <img src="img/soloLogo.PNG" height="80" width="80" class="img-fluid" alt="">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <div class="col-sm-6">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+
+            <!-- The slideshow -->
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid" src="img/index.jpg" alt="Visor Valve Index">
+                    <div class="carousel-caption">
+                        <h3 class="letter">Valve Index</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="img/vive.jpg" alt="Visor HTC Vive">
+                    <div class="carousel-caption">
+                        <h3 class="letter">HTC Vive</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="img/quest.jpg" alt="Visor Oculus Quest">
+                    <div class="carousel-caption">
+                        <h3 class="letter">Oculus Quest</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="img/cardboard.jpg" alt="Visor Google Cardboard">
+                    <div class="carousel-caption">
+                        <h3 class="letter">Google Cardboard</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="img/samsung.jpg" alt="Visor Samsung Gear VR">
+                    <div class="carousel-caption">
+                        <h3 class="letter">Samsung Gear VR</h3>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="col-sm-4">
+                <a type="application/rss+xml" href="rss.xml">
+                    <img width="30" src="img/rss.png" alt="rss-logo" class="img-thumbnail">
+                </a>
+                <a href="rss.xml">Enlace a nuestro RSS</a>
+            </div>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Blog</a>
+                |
+                <a href="about_us.html">Sobre nosotros</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 IES El Rincón</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <p><span>Industrial José Sánchez Peñate, s/n, 35001</span>
+                    Las Palmas de Gran Canaria, Las Palmas</p>
+            </div>
+
+            <div>
+                <p>928 22 72 83</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>VRTelde</span>
+                VRTelde se reserva el derecho a modificaciones.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.navbar').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.navbar').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+
+
+</html>

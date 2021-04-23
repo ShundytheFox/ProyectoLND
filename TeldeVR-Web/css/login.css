@@ -1,0 +1,40 @@
+body {
+  background-color: rgb(219, 219, 219);
+}
+
+.vertical {
+    border-left: 3px solid rgb(71, 68, 68);
+    height: 600px;
+    position:absolute;
+    left: 50%;
+    top: 10%;
+  }
+  
+.credentials {
+    position:absolute;
+    top: 25%;
+    left: 20%;
+}
+
+.left-text {
+  left: 10%;
+}
+
+.right-text {
+left: 5%;
+}
+
+@media (max-width: 880px) {
+  .vertical {
+    display: none;
+  }
+
+  .left-text {
+    display: none;
+  }
+
+  .credentials {
+    top: 10%;
+    left: 1%;
+  }
+}

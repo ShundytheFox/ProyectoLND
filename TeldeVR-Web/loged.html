@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+    <script>var firebaseConfig = {
+            apiKey: "AIzaSyDgsvCJDdLARUri45pNCW_xHjQY7IrIuGU",
+            authDomain: "visitas-vr.firebaseapp.com",
+            databaseURL: "https://visitas-vr-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "visitas-vr",
+            storageBucket: "visitas-vr.appspot.com",
+            messagingSenderId: "101580046169",
+            appId: "1:101580046169:web:4926fead5ef8c7498bd648",
+            measurementId: "G-K7P2V5HJS5"
+        };
+
+        firebase.initializeApp(firebaseConfig);</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Visitas de TeldeVR</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/8ba1bb13bd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/loged.css">
+    <script src="js/first_crud.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TeldeVR</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="visits.html">Visitas</a></li>
+                    <li><a href="gallery.html">Galería</a></li>
+                    <li><a href="about_us.html">Info</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Turismo
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item letter" href="loged.html">Visitas activas</a>
+                            <a class="dropdown-item letter" href="total_visits.html">Lugares</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="sign-in" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" href="">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+    <br>
+    
+    <br>
+    <div class="container loged">
+        <div class="row">
+            <div id="database" class="col-sm-7">
+                <h1 class="centered titles">Visitas activas</h1>
+                <!-- Tabla con las visitas -->
+                <table class="table table-dark table-hover table-responsive">
+                    <thead class="bold">
+                        <tr>
+                            <th></th>
+                            <th class="letter" colspan="2">Lugar a visitar</th>
+                            <th class="letter" colspan="2">Requisitos para la visita</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th class="letter">Logo</th>
+                            <th class="letter">Lugar</th>
+                            <th class="letter">Isla</th>
+                            <th class="letter">Precio</th>
+                            <th class="letter">Headset</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-visits" class="paragraphs">
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="col-sm-1">
+                <!-- Espacio -->
+            </div>
+            <div id="send-data1" class="col-sm-4">
+                <form id="form-visits">
+                    <div class="form-group">
+                        <label for="selector">Elige el lugar:</label>
+                        <select class="form-control" id="selector" name="placeSelector">
+                            <option value="none">Seleccione una opción</option>
+                        </select>
+                        <div id="error-selector">*Seleccione un lugar</div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <label class="letter">Modelo del headset:</label>
+                        <br>
+                        <div class="form-check-inline">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input" id="radio1" name="headset"
+                                    value="Valve Index">Valve Index
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label" for="radio2">
+                                <input type="radio" class="form-check-input" id="radio2" name="headset"
+                                    value="HTC Vive">HTC Vive
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label" for="radio3">
+                                <input type="radio" class="form-check-input" id="radio3" name="headset"
+                                    value="Oculus Rift">Oculus Rift
+                            </label>
+                        </div>
+                        <div id="error-radio">*No deje el hueco vacío</div>
+                    </div>
+                    <br>
+                    <!-- <div class="form-group">
+                        <label class="letter" for="device-model">Modelo del headset:</label>
+                        <br>
+                        <input type="text" class="form-control" name="deviceModel" value="" id="device-model">
+                        <div id="error-radio">*No deje el hueco vacío</div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="letter" for="price">Precio:</label>
+                        <br>
+                        <input type="text" class="form-control" name="price" value="" id="price">
+                        <div id="error-price">*Precio no válido</div>
+                    </div>
+                    <div id="send-data2">
+                        <a class="letter">Subir imágenes: </a>
+                        <label for="file" class="btn btn-file">
+                            <input type="file" name="file" id="file" style="display: none;">
+                            <img width="100" src="img/upload.png" class="img-responsive" alt="upload-images">
+                        </label>
+                        <div class="hidden" id="bar-for-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                    aria-valuemax="100" id="progress">
+                                    <span class="sr-only">70% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="error-image">*Debe subir una imagen</div>
+                    </div>
+                    <br>
+                    <input type="submit" name="submit" Value="Crear visita activa" id="send-data">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="error" class="col-sm-12">
+            <div id="error-letter">
+                <h1>ERROR</h1>
+                <p>Acceso restringido a esta zona de la web. Por favor, acceda como administrador.</p>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div id="alert" class="col-sm-4">
+            <h1>¡Aviso Importante!</h1>
+            <p>Solo puedes crear una visita activa si el lugar ha sido registrado previamente en el enlace de abajo.</p>
+            <a href="total_visits.html" class="btn btn-dark size" role="button">Click aquí</a>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+
+
+    <footer id="footer" class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="col-sm-4">
+                <a type="application/rss+xml" href="rss.xml">
+                    <img width="30" src="img/rss.png" alt="rss-logo" class="img-thumbnail">
+                </a>
+                <a href="rss.xml">Enlace a nuestro RSS</a>
+            </div>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Blog</a>
+                |
+                <a href="about_us.html">Sobre nosotros</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 IES El Rincón</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <p><span>Industrial José Sánchez Peñate, s/n, 35001</span>
+                    Las Palmas de Gran Canaria, Las Palmas</p>
+            </div>
+
+            <div>
+                <p>928 22 72 83</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>VRTelde</span>
+                VRTelde se reserva el derecho a modificaciones.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.navbar').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.navbar').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+
+</html>

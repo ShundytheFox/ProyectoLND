@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+    <script>var firebaseConfig = {
+            apiKey: "AIzaSyDgsvCJDdLARUri45pNCW_xHjQY7IrIuGU",
+            authDomain: "visitas-vr.firebaseapp.com",
+            databaseURL: "https://visitas-vr-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "visitas-vr",
+            storageBucket: "visitas-vr.appspot.com",
+            messagingSenderId: "101580046169",
+            appId: "1:101580046169:web:4926fead5ef8c7498bd648",
+            measurementId: "G-K7P2V5HJS5"
+        };
+
+        firebase.initializeApp(firebaseConfig);</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <title>Visitas de TeldeVR</title>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/8ba1bb13bd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/loged.css">
+    <script src="js/second_crud.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TeldeVR</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="visits.html">Visitas</a></li>
+                    <li><a href="gallery.html">Galería</a></li>
+                    <li><a href="about_us.html">Info</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Turismo
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item letter" href="loged.html">Visitas activas</a>
+                            <a class="dropdown-item letter" href="total_visits.html">Lugares</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="sign-in" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" href="">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <span class="navTrigger">
+                <i>Visitas</i>
+                <i><a href="#">Sobre nosotros</a></i>
+                <i></i>
+            </span> -->
+        </div>
+    </nav>
+    <br>
+    <br>
+    <div class="container loged">
+        <div class="row">
+
+            <div id="database2" class="col-sm-7">
+                <!-- Tabla con las visitas -->
+                <h1 class="titles centered">Lugares registrados</h1>
+                <table class="table table-dark table-hover .table-responsive">
+                    <thead class="bold">
+                        <tr>
+                            <th class="letter">Isla</th>
+                            <th class="letter">Lugar</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="paragraphs" id="tbody-visits2">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-1">
+                <!-- Espacio -->
+            </div>
+            <div id="send-data3" class="col-sm-4">
+                <form id="form-visits2">
+                    <div class="form-group">
+                        <label class="letter" for="island">Isla de la visita:</label>
+                        <br>
+                        <input type="text" class="size form-control" name="vrIsland" value="" id="island">
+                        <div id="error-comment">*No deje el hueco vacío</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="letter" for="place">Lugar de la visita:</label>
+                        <br>
+                        <input type="text" class="size form-control" name="vrPlace" value="" id="place">
+                        <div id="error-user">*No deje el hueco vacío</div>
+                    </div>
+                    <input type="submit" name="submit" Value="Crear visita" id="send-data-final">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="error" class="col-sm-12">
+            <div id="error-letter">
+                <h1>ERROR</h1>
+                <p>Acceso restringido a esta zona de la web. Por favor, acceda como administrador.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="col-sm-4">
+                <a type="application/rss+xml" href="rss.xml">
+                    <img width="30" src="img/rss.png" alt="rss-logo" class="img-thumbnail">
+                </a>
+                <a href="rss.xml">Enlace a nuestro RSS</a>
+            </div>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Blog</a>
+                |
+                <a href="about_us.html">Sobre nosotros</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 IES El Rincón</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <p><span>Industrial José Sánchez Peñate, s/n, 35001</span>
+                    Las Palmas de Gran Canaria, Las Palmas</p>
+            </div>
+
+            <div>
+                <p>928 22 72 83</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>VRTelde</span>
+                VRTelde se reserva el derecho a modificaciones.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.navbar').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.navbar').removeClass('affix');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

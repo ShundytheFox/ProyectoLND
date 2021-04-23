@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Notificaciones de TurismoVR</title>
+        <link>https://www.turismoVR.com</link>
+        <description>Aquí encontrarás las últimas novedades sobre TurismoVR
+            para mantenerte informado sobre todo lo que necesitas.
+        </description>
+        <item>
+            <title>Información sobre TurismoVR</title>
+            <link>https://www.turismoVR.com/information</link>
+            <description>¿Listo para descubrirnos? todo lo que necesitas saber
+                sobre nosotros está aquí.
+            </description>
+        </item>
+        <item>
+            <title>Formulario</title>
+            <link>https://www.turismoVR.com/formulary</link>
+            <description>Danos tu opinión sobre lo que te ha parecido
+                TurismoVR. No te cortes.
+            </description>
+        </item>
+        <item>
+            <title>Dispositivos VR</title>
+            <link>https://www.turismoVR.com/vr_images</link>
+            <description>¿No sabes qué dispositivo de VR usar? aquí tienes
+                una recopilación de los mejores.
+            </description>
+        </item>
+        <item>
+            <title>Visitas</title>
+            <link>https://www.turismoVR.com/visits</link>
+            <description>¿Qué quieres visitar esta vez? tienes algunos
+                ejemplos en nuestra galería de imágenes.
+            </description>
+        </item>
+    </channel>
+</rss>

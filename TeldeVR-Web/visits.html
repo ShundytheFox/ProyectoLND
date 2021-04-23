@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+    <script>var firebaseConfig = {
+            apiKey: "AIzaSyDgsvCJDdLARUri45pNCW_xHjQY7IrIuGU",
+            authDomain: "visitas-vr.firebaseapp.com",
+            databaseURL: "https://visitas-vr-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "visitas-vr",
+            storageBucket: "visitas-vr.appspot.com",
+            messagingSenderId: "101580046169",
+            appId: "1:101580046169:web:4926fead5ef8c7498bd648",
+            measurementId: "G-K7P2V5HJS5"
+        };
+
+        firebase.initializeApp(firebaseConfig);</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Página de visitas TeldeVR</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/visits.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">TeldeVR</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="visits.html">Visitas</a></li>
+                    <li><a href="gallery.html">Galería</a></li>
+                    <li><a href="about_us.html">Info</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Turismo
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item letter" href="loged.html">Visitas activas</a>
+                            <a class="dropdown-item letter" href="total_visits.html">Lugares</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="sign-in" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" href="">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span> 
+        </div>
+    </nav>
+    <div class="header"></div>
+    <div class="container">
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active bold" data-toggle="tab" href="#sanJuan">San Juan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bold" data-toggle="tab" href="#melenaras">Melenaras</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bold" data-toggle="tab" href="#puente7Ojos">Puente 7 ojos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bold" data-toggle="tab" href="#franchyRoca">Parque Franchy Roca</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="sanJuan" class="container tab-pane active"><br>
+                <h1 class="titles">Basílica de San Juan Bautista</h1>
+                <br>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img height="300" width="200" class="img-fluid spacer" src="img/sanjuan-antiguo.jpg" alt="">
+                    </div>
+                    <div class="col-sm-10">
+                        <p class="paragraphs">El histórico barrio de san Juan es el núcleo fundacional de la ciudad de Telde, que surgió
+                            en torno a la basílica del mismo nombre. Es un lugar privilegiado, en su plaza y
+                            alameda, enclave urbanístico de notable importancia, pues en ella se observan las
+                            casas más nobles de la urbe, en donde la cantería gris de Arucas, la cal del sur
+                            y las labores de carpintería pintadas siempre de verde, realzan el aspecto positivo
+                            del entorno.</p>
+
+                        <p class="paragraphs">La primitiva iglesia de san Juan Bautista en Telde fue mandada construir por Hernán García
+                            del
+                            Castillo "El Viejo". Estaba situada junto al torreón defensivo, constaba de una sola nave y
+                            la
+                            construcción era de piedra y barro con cubierta de teja.</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-8">
+                        <p class="paragraphs">Pronto la iglesia se derrumbó y fue Cristóbal García del Castillo quien, en 1484,
+                            fue el primer benefactor de la edificación de la actual basílica. La participación
+                            activa, como mayordomo de obras, de la construcción definitiva de la Iglesia Matriz de
+                            San Juan Bautista queda reseñaba en su testamento, como en el interior del primer fortín,
+                            que diera lugar a la ciudad, su padre y él levantaron con mucho esfuerzo y no pocos dineros
+                            la primera de las Iglesias, dotándola de ricos artesonados y bellas labores de cantería
+                            gris (basalto volcánico de la zona de Arucas, norte de Gran Canaria). Se convirtió en
+                            recaudador de dineros para la fábrica, de otros colonizadores, y a su costa cubrió todos
+                            los gastos de la Capilla Mayor, pagando además, los de una capilla colateral.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid spacer" src="img/sanjuan-interior.jpg" alt="">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="paragraphs">Originariamente la basílica disponía de tres naves, siendo la central la más alta. La capilla
+                            mayor fue costeada por Cristóbal García del Castillo. La basílica actual dedicada a san Juan
+                            Bautista consta de tres naves siendo la del centro la más amplia; allí se encuentra la
+                            venerada
+                            imagen del Santo Cristo de Telde que goza de mucha devoción en la diócesis de Canarias.</p>
+
+                        <p class="paragraphs">La joya de la basílica es el retablo del altar mayor, donado igualmente por Cristóbal García
+                            del
+                            Castillo que lo trajo de Flandes, al igual que muchas y valiosas tallas de Luján Pérez, como
+                            Nuestra Señora de la Soledad de Telde, san José, San Juan Evangelista, el Cristo Crucificado
+                            custodiado en la sacristía, el Niño Jesús de la Virgen del Carmen y san Pedro de Verona,
+                            patrono
+                            de
+                            Gran Canaria. La basílica es también la parroquia matriz de la ciudad</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid spacer" src="img/sanjuan-moderno.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="melenaras" class="container tab-pane fade"><br>
+                <h1 class="titles">Playa de Melenara</h1>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img height="400" width="400" class="img-fluid spacer" src="img/Panoramica-de-Melenara-scaled.jpg"
+                            alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="paragraphs">Se trata de la única playa de Telde que cuenta con bandera azul de forma
+                            permanente, durante todo el año, otorgada desde 2000.
+                            Esta playa tiene 350 metros de longitud, constituida, al igual que las
+                            anteriores, por arena negra. Encontramos en ella un pequeño y encantador
+                            muelle y cerca de este, el imponente dios del mar: Neptuno. Una estatua de
+                            bronce realizada por Luis Arencibia Betancor, de 4.20 m de altura que
+                            custodia este lugar.</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="paragraphs">Muy probablemente Melenara debe su nombre al desembarco de una armada mallorquina
+                            procedente de una localidad castellonense llamada Almenara, al mando de Luis de la Cerda
+                            en 1344, donde los atacantes fueron derrotados.
+                            No es de extrañar que a Melenara se le otorgara bandera azul de forma permanente ya
+                            que es una de las playas familiares más concurridas del municipio debido a la calidad de
+                            su arena y agua y a los servicios que ofrece, entre los que se destacan los siguientes:
+                            numerosos restaurantes en su avenida, tiendas, un parque infantil, un balneario gratuito
+                            y adaptado a PMR, una amplia zona de aparcamientos, una zona de recreo con mesas y bancos
+                            para realizar pícnics, servicio de socorrismo durante todo el año, paneles informativos
+                            sobre
+                            la vida marina, etc.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid spacer" src="img/Melenaravieja.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="puente7Ojos" class="container tab-pane fade"><br>
+                <h1 class="titles">Puente de los 7 Ojos</h1>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img height="300" width="300" class="img-fluid spacer" src="img/PuenteSieteOjosAntiguo.png" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="paragraphs">El Puente de los Siete Ojos, que salva la depresión del barranco Real,
+                            cumple 150 años. En octubre de 1865 se colocó la última piedra de su 7º
+                            arco, pero no fue hasta octubre de 1866 cuando se dio por finalizado.
+                            Obra del insigne ingeniero Juan de León y Castillo, este puente,
+                            erigido en icono de San Juan y de todo Telde durante décadas, dotaba a la
+                            ciudad de una vía de comunicación rápida y segura con la capital de la
+                            Isla, pero, a la postre, también facilitó la conversión del municipio en la
+                            puerta de entrada y salida de todo el sur y el este de Gran Canaria, con el
+                            lógico desarrollo comercial y económico que eso le supuso. </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="paragraphs">Las obras, financiadas por el Ministerio de Fomento de entonces, arrancaron
+                            poco después, el 6 de diciembre de 1863, y acabaron el 6 de octubre de
+                            1865, según Jiménez Martel, que detalla cómo al colocar la última piedra de
+                            la clave del 7º arco repicaron las campanas y se tiraron voladores, tocó la
+                            banda y se dieron vivas a la Reina y a León y Castillo. La recepción definitiva
+                            de las obras no se firmaría hasta octubre de 1866. Pese a tanta trascendencia,
+                            pocos se han percatado de la efemérides, de que se cumplen 150 años de su
+                            construcción sobre el ancho cauce del barranco Real de Telde.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid spacer" src="img/puente.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="franchyRoca" class="container tab-pane fade"><br>
+                <h1 class="titles">Parque Franchy Roca</h1>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img height="300" width="300" class="img-fluid spacer" src="img/franchy.jpg" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="paragraphs">El parque Franchy Roca se autodenomina así en honor al lider del partido
+                            Republicano Federal y prestigioso abogado de Las Palmas de Gran Canaria,
+                            defensor a ultranza de la clase obrera insultar. Tras la ascensión al poder
+                            del dictador Francisco Franco el parque cambió de nombre a "León y Joven", hasta
+                            que tras restaurar la democracia volvió a denominarse Franchy Roca.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="paragraphs">Antiguamente en Franchy y Roca los ganadores realizaban ferias
+                            comerciales para la muestra de productos y además era una zona de descanso que usaban
+                            los habitantes de los alrededores para pasar el día
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid" src="img/Roca.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <div class="col-sm-4">
+                <a type="application/rss+xml" href="rss.xml">
+                    <img width="30" src="img/rss.png" alt="rss-logo" class="img-thumbnail">
+                </a>
+                <a href="rss.xml">Enlace a nuestro RSS</a>
+            </div>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Blog</a>
+                |
+                <a href="about_us.html">Sobre nosotros</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 IES El Rincón</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <p><span>Industrial José Sánchez Peñate, s/n, 35001</span>
+                    Las Palmas de Gran Canaria, Las Palmas</p>
+            </div>
+
+            <div>
+                <p>928 22 72 83</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>VRTelde</span>
+                VRTelde se reserva el derecho a modificaciones.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.navbar').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.navbar').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+
+</html>
